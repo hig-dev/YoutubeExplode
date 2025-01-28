@@ -51,7 +51,4 @@ internal static class AsyncCollectionExtensions
 
         return list;
     }
-
-    public static ValueTaskAwaiter<List<T>> GetAwaiter<T>(this IAsyncEnumerable<T> source) =>
-        source.ToListAsync().GetAwaiter();
 }

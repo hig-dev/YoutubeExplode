@@ -55,7 +55,7 @@ public class ClosedCaptionClient(HttpClient http)
     public async ValueTask<ClosedCaptionManifest> GetManifestAsync(
         VideoId videoId,
         CancellationToken cancellationToken = default
-    ) => new(await GetClosedCaptionTrackInfosAsync(videoId, cancellationToken));
+    ) => new(await GetClosedCaptionTrackInfosAsync(videoId, cancellationToken).ToListAsync());
 
     private async IAsyncEnumerable<ClosedCaption> GetClosedCaptionsAsync(
         ClosedCaptionTrackInfo trackInfo,
@@ -114,7 +114,7 @@ public class ClosedCaptionClient(HttpClient http)
     public async ValueTask<ClosedCaptionTrack> GetAsync(
         ClosedCaptionTrackInfo trackInfo,
         CancellationToken cancellationToken = default
-    ) => new(await GetClosedCaptionsAsync(trackInfo, cancellationToken));
+    ) => new(await GetClosedCaptionsAsync(trackInfo, cancellationToken).ToListAsync());
 
     /// <summary>
     /// Writes the closed caption track identified by the specified metadata to the specified writer.
