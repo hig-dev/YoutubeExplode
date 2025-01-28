@@ -227,7 +227,9 @@ public class StreamClient(HttpClient http)
         }
 
         // Extract streams from the player response
-        streamInfos.AddRange(await GetStreamInfosAsync(playerResponse.Streams, cancellationToken).ToListAsync());
+        streamInfos.AddRange(
+            await GetStreamInfosAsync(playerResponse.Streams, cancellationToken).ToListAsync()
+        );
 
         // Extract streams from the DASH manifest
         if (!string.IsNullOrWhiteSpace(playerResponse.DashManifestUrl))
