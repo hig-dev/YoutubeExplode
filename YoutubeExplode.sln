@@ -1,12 +1,13 @@
-﻿Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.28803.352
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178 d17.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2D3632A9-3DE4-4E64-AC3E-94810F2F55D0}"
 	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
 		License.txt = License.txt
 		Readme.md = Readme.md
-		Directory.Build.props = Directory.Build.props
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "YoutubeExplode.Demo.Cli", "YoutubeExplode.Demo.Cli\YoutubeExplode.Demo.Cli.csproj", "{6983B0A4-44B0-4FAF-81C7-94CC784570F0}"
@@ -20,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExplode.Converter", "YoutubeExplode.Converter\YoutubeExplode.Converter.csproj", "{CF1CA267-32A2-4E91-8207-8FA9C697BC8B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExplode.Converter.Tests", "YoutubeExplode.Converter.Tests\YoutubeExplode.Converter.Tests.csproj", "{DF44A908-CC76-406C-AA7B-9E9C03FE97D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YoutubeExplode.XamarinTest", "YoutubeExplode.XamarinTest\YoutubeExplode.XamarinTest.csproj", "{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +54,12 @@ Global
 		{DF44A908-CC76-406C-AA7B-9E9C03FE97D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF44A908-CC76-406C-AA7B-9E9C03FE97D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF44A908-CC76-406C-AA7B-9E9C03FE97D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1326C637-EB2C-4E5C-B6F5-42FF4F4A67DD}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
