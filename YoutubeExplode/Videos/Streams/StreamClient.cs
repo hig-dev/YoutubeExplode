@@ -227,7 +227,9 @@ public class StreamClient(HttpClient http)
         }
 
         // Extract streams from the player response
-        streamInfos.AddRange(await GetStreamInfosAsync(playerResponse.Streams, cancellationToken));
+        streamInfos.AddRange(
+            await GetStreamInfosAsync(playerResponse.Streams, cancellationToken).ToListAsync()
+        );
 
         // Extract streams from the DASH manifest
         if (!string.IsNullOrWhiteSpace(playerResponse.DashManifestUrl))
@@ -240,7 +242,7 @@ public class StreamClient(HttpClient http)
                 );
 
                 streamInfos.AddRange(
-                    await GetStreamInfosAsync(dashManifest.Streams, cancellationToken)
+                    await GetStreamInfosAsync(dashManifest.Streams, cancellationToken).ToListAsync()
                 );
             }
             // Some DASH manifest URLs return 404 for whatever reason
