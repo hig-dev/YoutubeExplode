@@ -5,18 +5,15 @@ namespace YoutubeExplode.Utils.Extensions;
 
 internal static class BinaryExtensions
 {
-    extension(byte[] data)
+    public static string ToHex(this byte[] data, bool isUpperCase = true)
     {
-        public string ToHex(bool isUpperCase = true)
+        var buffer = new StringBuilder(2 * data.Length);
+
+        foreach (var b in data)
         {
-            var buffer = new StringBuilder(2 * data.Length);
-
-            foreach (var b in data)
-            {
-                buffer.Append(b.ToString(isUpperCase ? "X2" : "x2", CultureInfo.InvariantCulture));
-            }
-
-            return buffer.ToString();
+            buffer.Append(b.ToString(isUpperCase ? "X2" : "x2", CultureInfo.InvariantCulture));
         }
+
+        return buffer.ToString();
     }
 }

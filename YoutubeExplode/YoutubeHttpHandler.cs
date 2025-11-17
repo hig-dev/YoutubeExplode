@@ -62,7 +62,7 @@ internal class YoutubeHttpHandler : ClientDelegatingHandler
             return null;
 
         var timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
-        var token = $"{timestamp} {sessionId} {uri.Domain}";
+        var token = $"{timestamp} {sessionId} {uri.Domain()}";
         var tokenHash = Hash.Compute(SHA1.Create(), Encoding.UTF8.GetBytes(token)).ToHex();
 
         return $"SAPISIDHASH {timestamp}_{tokenHash}";
@@ -101,7 +101,7 @@ internal class YoutubeHttpHandler : ClientDelegatingHandler
         // Set origin
         if (!request.Headers.Contains("Origin"))
         {
-            request.Headers.Add("Origin", request.RequestUri.Domain);
+            request.Headers.Add("Origin", request.RequestUri.Domain());
         }
 
         // Set user agent

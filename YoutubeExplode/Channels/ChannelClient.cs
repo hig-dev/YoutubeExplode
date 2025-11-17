@@ -40,8 +40,7 @@ public class ChannelClient(HttpClient http)
                 .LastOrDefault()
                 ?.Groups[1]
                 .Value.NullIfWhiteSpace()
-                ?.ParseIntOrNull()
-            ?? 100;
+                ?.ParseIntOrNull() ?? 100;
 
         var thumbnails = new[] { new Thumbnail(logoUrl, new Resolution(logoSize, logoSize)) };
 
